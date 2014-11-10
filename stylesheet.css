@@ -1,0 +1,183 @@
+/*General Styles*/
+body{
+	font-family:sans-serif;
+}
+
+p{
+	line-height: 1.5;
+	font-size:14px;
+	margin: 15px 0;
+}
+
+h1{
+	line-height:1.2;
+	font-size:35px;
+}
+
+ul{
+	line-height:1.5;
+	font-size:14px;
+}
+
+.container{
+	width:95%;
+	margin:auto;
+	background:#FFF;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	padding: 90px 76px;
+	padding-left: 260px;
+	padding-bottom:10px;
+}
+
+.title{
+	padding-left:50px;
+	border-bottom: solid 1px #BABABA;
+	padding-bottom: 59px;
+	padding-top: 200px;
+	margin-bottom:15px;
+	background: #67ACDD;
+}
+
+.title h1{
+	font-size:4em;
+	margin:0;
+	margin-bottom:5px;
+	color:#FFF;
+	font-family: 'Abel', sans-serif;
+}
+
+.section{
+	width:48%;
+	margin: 100px 20px;
+}
+
+.section h1{
+	font-family: 'Abel', sans-serif;
+}
+
+.pg{
+	padding:5px 0;
+	margin-bottom: 28px;
+}
+
+#firstSection{
+	margin-top:0px;
+}
+
+#endPg{
+	margin-top:20px;
+}
+
+
+/*Panel Designs*/
+.panel{
+	position: fixed;  
+	margin:-5px;
+	border:solid 1px #000;
+	border-radius:5px;
+	box-shadow: 2px 2px 10px #888888;
+	-moz-border-radius:5px;
+	-moz-box-shadow: 2px 2px 10px #888888;
+	-webkit-border-radius:5px;
+	-webkit-box-shadow: 2px 2px 10px #888888;
+	background-color:#F8F8F8;
+}
+
+.panel-top{
+	border-bottom:solid 1px #DDD;
+	padding:5px;
+	padding-left:10px;
+}
+
+.panel-top h1{
+	font-size: 30px;
+	margin:0;
+	padding:0;
+}
+
+.panel-top span{
+	float:right;
+	opacity:0.4;
+}
+
+.panel-body{
+	padding:20px;
+}
+
+.panel-footer{
+	padding:5px;
+	border-top:solid 1px #DDD;
+}
+
+.panel-show {
+	display: block; 
+}
+
+.panel-hide {
+	display: none; 
+}
+.panel-top h1{	
+	font-family: 'Abel', sans-serif;
+}
+
+/*Panel Dismiss Buttons*/
+.btn-dismiss{
+	background: #67ACDD;
+	color: #FFF;
+	text-align: center;
+	font-family: 'Abel', sans-serif;
+	font-size: 19px;
+}
+
+.btn-dismiss:hover{
+	cursor:pointer;
+	opacity: 0.7;
+	text-decoration: underline;
+}
+
+#topPanel .btn-dismiss{
+	top: 9px;
+	right: 12px;
+	position:absolute;
+	width: 90px;
+}
+
+
+#bottomPanel .btn-dismiss{
+	top: 7px;
+	right: 10px;
+	position:absolute;
+}
+
+#rightPanel .btn-dismiss{
+	right:20px;
+	position:absolute;
+}
+
+#leftPanel .btn-dismiss{
+	right:20px;
+	position:absolute;
+}
+
+/*Opening Panel Buttons*/
+.open-panel{
+	height: 38px;
+	background: #67ACDD;
+	color: #FFF;
+	padding-top: 11px;
+	padding-left: 0px;
+	border: solid #BABABA 1px;
+	margin-left:100px;
+	width: 318px;
+	text-align: center;
+	font-family: 'Abel', sans-serif;
+	font-size: 19px;
+}
+
+.open-panel:hover{
+	cursor:pointer;
+	opacity: 0.7;
+	text-decoration: underline;
+}
