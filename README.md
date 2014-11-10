@@ -8,6 +8,11 @@ Downloading
 
 Clone this repository to use
 
+Demo
+=====
+
+A demo for this library is located at http://overstreetce.github.io/panelBox/
+
 Using this Library
 ===================
 
