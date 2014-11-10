@@ -22,8 +22,8 @@
         //Creates the functions that open and close the panel, also sets the options
         self.show = function(element){ 
             self.setOptions(element); 
-            // $(element).removeClass('panel-hide');
-            // $(element).addClass('panel-show');
+            $(element).removeClass('panel-hide');
+            $(element).addClass('panel-show');
 
         }
 
@@ -35,13 +35,12 @@
 
         //On and Off switch for the function
         self.toggle = function(index, element){ 
-            // if($(element).hasClass('panel-show')){
-            //     self.hide(element);
-            // }
-            // else if($(element).hasClass('panel-hide')){
-            //     self.show(element);
-            // }
-            $(element).slideToggle();
+            if($(element).hasClass('panel-show')){
+                self.hide(element);
+            }
+            else if($(element).hasClass('panel-hide')){
+                self.show(element);
+            }
            //Calls the function and returns it
           if ($.isFunction( settings.complete ) ) {
             settings.complete.call( this );
