@@ -10,6 +10,8 @@
         // Creates variables for the selector and the settings
         var self = this;
         var settings;
+        var finalHeight;
+        var finalWidth;
         var defaults = { 
               width: '100%',
               height: '50%',
@@ -24,6 +26,7 @@
             self.setOptions(element); 
             $(element).removeClass('panel-hide');
             $(element).addClass('panel-show');
+            self.animateOn(false, '.panel-show');
 
         }
 
@@ -70,19 +73,90 @@
 
         //Sets the different options on the panel class
         self.setOptions = function(element){
+          // Sets the direction
+          var direction = settings.direction;
+          $(element).css(direction, 0);
 
-           //Sets the direction
-           var direction = settings.direction;
-            $(element).css(direction,0);
-
-          // Sets the rest of the elements
-            $(element).css({
+          //Uses the direction to set the rest of the CSS, minus what's needed for animation
+          if(direction === "top" || direction === "bottom"){
+              $(element).css({
               width : settings.width,
+              height : '0px',
+              background : settings.background,
+              color : settings.textColor
+            }); 
+          }
+          else if(direction ==="right" || direction === "left"){
+              $(element).css({
+              width : '0px',
               height : settings.height,
               background : settings.background,
               color : settings.textColor
-            })
+            }); 
+          }           
         }
+
+        //Animates the panel
+        self.animateOn=function(toggleOff, element){
+                var direction = settings.direction;
+         if(direction === "top" || direction === "bottom"){
+            var height=settings.height;
+          //Checks through to see if the height is in px or %
+            for(var i =0; i < height.length; i++){
+            if(height.charAt(i)==="%"){
+              height=height.substr(0,i);
+              height=Number(height);
+              var windowHeight= $(window).height();
+              height = windowHeight * (height/100);
+              settings.height = height;
+            }
+            else if(height.charAt(i)==="p"){
+              height=height.substr(0,i);
+              height=Number(height);
+               settings.height = height;
+            }
+          }
+          if((direction === "top" && toggleOff) || (direction === "bottom" &&!toggleOff)){
+            $(element).animate({
+              height: '-='+settings.height
+            });
+          }
+          else if((direction === "top" && !toggleOff) || (direction === "bottom" &&toggleOff))
+             $(element).animate({
+              height: '+='+settings.height
+            });
+         }
+
+          else if(direction ==="right" || direction === "left"){
+           var width=settings.width;
+          //Checks through to see if the height is in px or %
+            for(var i =0; i < width.length; i++){
+            if(width.charAt(i)==="%"){
+              width=width.substr(0,i);
+              width=Number(width);
+              var windowwidth= $(window).width();
+              width = windowwidth * (width/100);
+              settings.width = width;
+            }
+            else if(width.charAt(i)==="p"){
+              width=width.substr(0,i);
+              width=Number(width);
+               settings.width = width;
+            }
+          }
+           if((direction === "right" && toggleOff) || (direction === "left" &&!toggleOff)){
+            $(element).animate({
+              width: '-='+settings.width
+            });
+          }
+          else if((direction === "right" && !toggleOff) || (direction === "left" &&toggleOff))
+             $(element).animate({
+              width: '+='+settings.width
+            });
+
+          }
+        }
+
 
          // If the object is a string
         if (typeof options === "string"){
@@ -94,9 +168,7 @@
             settings = $.extend(defaults, options);
              self.each(self['toggle']); 
             } 
-
-
+        }
 
         return self;
-    }
 }(jQuery));
