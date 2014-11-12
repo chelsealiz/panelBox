@@ -31,9 +31,8 @@
         }
 
         self.hide = function(element){ 
-            $(element).removeClass('panel-show');
-            $(element).addClass('panel-hide');
             self.animateOn(true, '.panel-show');
+             $(element).removeClass('panel-show');
         }
 
 
@@ -42,7 +41,7 @@
             if($(element).hasClass('panel-show')){
                 self.hide(element);
             }
-            else if($(element).hasClass('panel-hide')){
+            else{
                 self.show(element);
             }
            //Calls the function and returns it
@@ -117,11 +116,11 @@
                settings.height = height;
             }
           }
-          if(toggleOff){
+          if(toggleOff)
             $(element).animate({
               height: 0
             });
-          }
+          
           else
               $(element).animate({
               height: settings.height
