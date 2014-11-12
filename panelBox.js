@@ -33,6 +33,7 @@
         self.hide = function(element){ 
             $(element).removeClass('panel-show');
             $(element).addClass('panel-hide');
+            self.animateOn(true, '.panel-show');
         }
 
 
@@ -106,7 +107,7 @@
             if(height.charAt(i)==="%"){
               height=height.substr(0,i);
               height=Number(height);
-              var windowHeight= $(window).height();
+              var windowHeight= $(document).height();
               height = windowHeight * (height/100);
               settings.height = height;
             }
@@ -116,14 +117,14 @@
                settings.height = height;
             }
           }
-          if((direction === "top" && toggleOff) || (direction === "bottom" &&!toggleOff)){
+          if(toggleOff){
             $(element).animate({
-              height: '-='+settings.height
+              height: 0
             });
           }
-          else if((direction === "top" && !toggleOff) || (direction === "bottom" &&toggleOff))
-             $(element).animate({
-              height: '+='+settings.height
+          else
+              $(element).animate({
+              height: settings.height
             });
          }
 
@@ -144,14 +145,14 @@
                settings.width = width;
             }
           }
-           if((direction === "right" && toggleOff) || (direction === "left" &&!toggleOff)){
+          if(toggleOff){
             $(element).animate({
-              width: '-='+settings.width
+              width: 0
             });
           }
-          else if((direction === "right" && !toggleOff) || (direction === "left" &&toggleOff))
-             $(element).animate({
-              width: '+='+settings.width
+          else
+              $(element).animate({
+              width: settings.width
             });
 
           }
