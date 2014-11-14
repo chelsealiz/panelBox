@@ -2,7 +2,7 @@
  * Creates a Panel on any side you want that is openable and closeable
  * v. 1.0.0
  * Built by Chelsea
- * Github: github.com/overstreetce/panelBox
+ * Github: github.com/overstreetce/alert-panel
  *
  */
 (function($){
@@ -14,7 +14,7 @@
         var finalWidth;
         var defaults = { 
               width: '100%',
-              height: '40%',
+              height: '50%',
               direction:'top',
               background: '#ffffff',
               textColor: '#000000',
