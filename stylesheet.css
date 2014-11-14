@@ -4,7 +4,7 @@ body{
 }
 
 p{
-	line-height: 1.5;
+	line-height: 2;
 	font-size:14px;
 	margin: 15px 0;
 }
@@ -50,27 +50,14 @@ ul{
 	font-family: 'Abel', sans-serif;
 }
 
-.section{
-	width:48%;
-	margin: 100px 20px;
+.row{
+	margin: 47px 0px;
 }
 
-.section h1{
+.row h1{
 	font-family: 'Abel', sans-serif;
 }
 
-.pg{
-	padding:5px 0;
-	margin-bottom: 28px;
-}
-
-#firstSection{
-	margin-top:0px;
-}
-
-#endPg{
-	margin-top:20px;
-}
 
 
 /*Panel Designs*/
@@ -140,7 +127,7 @@ ul{
 	text-decoration: underline;
 }
 
-/*Panel Dismiss Buttons */
+/*Panel Dismiss Buttons*/
 #topPanel .btn-dismiss{
 	top: 9px;
 	right: 12px;
@@ -167,14 +154,14 @@ ul{
 
 /*Opening Panel Buttons*/
 .open-panel{
-	height: 38px;
+	height: 40px;
 	background: #67ACDD;
 	color: #FFF;
 	padding-top: 11px;
 	padding-left: 0px;
-	border: solid #BABABA 1px;
-	margin-left:100px;
-	width: 318px;
+	border: solid #C3BABA 1px;
+	margin-left:64px;
+	width: 300px;
 	text-align: center;
 	font-family: 'Abel', sans-serif;
 	font-size: 19px;

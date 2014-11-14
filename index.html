@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Demo Page</title>
-<!-- <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="reset.css">
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -87,40 +87,58 @@
 
 <div class = "container">
 
-	<div class="section" id="firstSection">
+	<div class="row">
 		<h1>Introduction and Features</h1>
-		<div class="pg">
+	</div>
+	<div class="row">
+		<div class="col-sm-7 col-sm-3-offset-6 col-md-8 col-lg-7 col-xl-4">
 			<p>This jQuery library allows you to create customizable, dismissable information panels. You don't even have to use JavaScript or jQuery. There are tons of features and it's super easy to implement.</p>	
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur rhoncus lectus eu faucibus. Fusce mattis dignissim volutpat. Aenean quam risus, laoreet malesuada ipsum quis, efficitur semper justo. Nullam et erat ex. Integer elit ex, tincidunt at semper rutrum, auctor eu lorem. Nulla sodales orci dolor, sed finibus libero sollicitudin eleifend. Praesent vestibulum egestas eleifend. Donec at erat nisl. In vel nisi ipsum. Praesent eleifend a est vel tristique. Suspendisse eget sapien non mauris malesuada ultricies. Morbi eget arcu diam. Vestibulum hendrerit placerat posuere. Sed rhoncus sed arcu vitae fringilla. Suspendisse at nibh sed lacus posuere pharetra.</p>
-		</div>		
+		</div>
+		</div>
+		<div class="row">
 		<div class="open-panel" data-panel="switch" data-target="#topPanel" data-height="50%" id="openTop">Panel Options</div>
 		</div>
 
-	<div class="section">
+	<div class="row">
 		<h1>Customizable Content</h1>
-		<div class="pg">
+	</div>
+	<div class = "row">
+		<div class="col-sm-7 col-sm-3-offset-6 col-md-8 col-lg-7 col-xl-4">
 			<p>You can put literally anything you want in these panels. They're nothing but divs with special classes! The JavaScript takes care of opening and closing the div as long as you put the proper classes in. Check out this panel with a picture.</p>		
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur rhoncus lectus eu faucibus. Fusce mattis dignissim volutpat. Aenean quam risus, laoreet malesuada ipsum quis, efficitur semper justo. Nullam et erat ex. Integer elit ex, tincidunt at semper rutrum, auctor eu lorem. Nulla sodales orci dolor, sed finibus libero sollicitudin eleifend. Praesent vestibulum egestas eleifend. Donec at erat nisl. In vel nisi ipsum. Praesent eleifend a est vel tristique. Suspendisse eget sapien non mauris malesuada ultricies. Morbi eget arcu diam. Vestibulum hendrerit placerat posuere. Sed rhoncus sed arcu vitae fringilla. Suspendisse at nibh sed lacus posuere pharetra.</p>
-		</div>		
+		</div>	
+		</div>	
+		<div class="row">
 	<div class="open-panel" data-panel="switch" data-target="#bottomPanel" data-direction="bottom" data-height="50%" id="openBottom">Check This Out!</div>
 		</div>
 
-	<div class="section">
+	<div class="row">
 		<h1>JavaScript is Optional</h1>
-		<div class="pg">
+	</div>
+	<div class ="row">
+		<div class="col-sm-7 col-sm-3-offset-6 col-md-8 col-lg-7 col-xl-4">
 		<p>Applying it without knowing JavaScript is easy- you simply need to add some code to your tags. The panel below is fully customized- none of the defaults listed in the Options panel are being applied.</p>	
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur rhoncus lectus eu faucibus. Fusce mattis dignissim volutpat. Aenean quam risus, laoreet malesuada ipsum quis, efficitur semper justo. Nullam et erat ex. Integer elit ex, tincidunt at semper rutrum, auctor eu lorem. Nulla sodales orci dolor, sed finibus libero sollicitudin eleifend. Praesent vestibulum egestas eleifend. Donec at erat nisl. In vel nisi ipsum. Praesent eleifend a est vel tristique. Suspendisse eget sapien non mauris malesuada ultricies. Morbi eget arcu diam. Vestibulum hendrerit placerat posuere. Sed rhoncus sed arcu vitae fringilla. Suspendisse at nibh sed lacus posuere pharetra.</p>
-		</div>		
+		</div>	
+		</div>
+		<div class="row">	
 	<div class="open-panel" data-panel="switch" data-target="#leftPanel" data-direction="left" data-width="20%" data-height="100%" data-bg="#D1D1FF" data-color="#FFFFFF" id="openLeft">Custom Panel</div>
-		<div class="pg" id="endPg">
+</div>
+<div class="row">
+		<div class="col-sm-6 col-sm-3-offset-6 col-md-6 col-lg-6 col-xl-4">
 		<p>However, it is possible to create a panel with jQuery. You don't have to use the HTML panels if you prefer the JavaScript ones. This panel looks the same as the others, but it isn't pure HTML.</p>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur rhoncus lectus eu faucibus. Fusce mattis dignissim volutpat. Aenean quam risus, laoreet malesuada ipsum quis, efficitur semper justo. Nullam et erat ex. Integer elit ex, tincidunt at semper rutrum, auctor eu lorem. Nulla sodales orci dolor, sed finibus libero sollicitudin eleifend. Praesent vestibulum egestas eleifend. Donec at erat nisl. In vel nisi ipsum. Praesent eleifend a est vel tristique. Suspendisse eget sapien non mauris malesuada ultricies. Morbi eget arcu diam. Vestibulum hendrerit placerat posuere. Sed rhoncus sed arcu vitae fringilla. Suspendisse at nibh sed lacus posuere pharetra.</p>
 		</div>
+	</div>
+	<div class="row">
 	<div class="open-panel" id="openRight">jQuery Panel</div>
 		</div>
 
 		</div>
 </body>
+
+
 <script type = "text/javascript" src ="jquery.min.js"></script>
 <script type = "text/javascript" src="panelBox.js"></script>
 <script>
