@@ -14,7 +14,7 @@
         var finalWidth;
         var defaults = { 
               width: '100%',
-              height: '50%',
+              height: '40%',
               direction:'top',
               background: '#ffffff',
               textColor: '#000000',

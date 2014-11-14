@@ -125,7 +125,7 @@ ul{
 	font-family: 'Abel', sans-serif;
 }
 
-/*Panel Dismiss Buttons*/
+/*Panel Dismiss Buttons General*/
 .btn-dismiss{
 	background: #67ACDD;
 	color: #FFF;
@@ -140,6 +140,7 @@ ul{
 	text-decoration: underline;
 }
 
+/*Panel Dismiss Buttons Specific*/
 #topPanel .btn-dismiss{
 	top: 9px;
 	right: 12px;
