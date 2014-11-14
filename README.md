@@ -62,6 +62,8 @@ Adding the Overlay
 
 3) NOTE: Background and opacity can be changed, make sure the Z-Index of your panel is higher than your overlay (you should change this as well)
 
+Make sure that your panel content is enclosed in a div within the panel!
+
 License
 =======
 
