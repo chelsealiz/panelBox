@@ -11,7 +11,6 @@
 <!--Top Panel-->
 	<div class="panel panel-hide" id ="topPanel">
 		<div class="panel-top">
-			<button type="button" class="btn btn-dismiss" data-panel="dismiss" data-target="#topPanel" >Dismiss</button>
 			<h1>Panel Options</h1>
 			</div>
 		<div class="panel-body">
@@ -24,8 +23,7 @@
 					<li>Text Color- Text color for the panel (default- black/#000000)</li>
 				</ul>
 				<p>There are so many more things you can do with these panels. Dismiss this panel and read on!</p>
-		</div>
-		<div class="panel-footer">
+<button type="button" class="btn btn-dismiss" data-panel="dismiss" data-target="#topPanel" >Dismiss</button>
 		</div>
 	</div>
 <!--Bottom Panel-->
@@ -37,10 +35,9 @@
 		<div class="panel-body">
 			<p>Check this out:</p>
 		<img src="coding-jokes.jpg">
-		<p>Funny, huh? You can completely customzie the content in these panels. You can add images, forms, links to more information, or literally anything you want. The sky's the limit.</p>
+		<p>Funny, huh? You can completely customize the content in these panels. You can add images, forms, links to more information, or literally anything you want. The sky's the limit.</p>
 		</div>
-		<div class="panel-footer">
-		</div>
+
 	</div>
 	<!--Left Panel-->
 	<div class="panel panel-hide" id ="leftPanel">
@@ -123,10 +120,10 @@
 		</div>	
 		</div>
 		<div class="row">	
-	<div class="open-panel" data-panel="switch" data-target="#leftPanel" data-direction="left" data-width="20%" data-height="100%" data-bg="#D1D1FF" data-color="#FFFFFF" id="openLeft">Custom Panel</div>
+	<div class="open-panel" data-panel="switch" data-target="#leftPanel" data-direction="left" data-width="35%" data-height="100%" data-bg="#D1D1FF" data-color="#FFFFFF" id="openLeft">Custom Panel</div>
 </div>
 <div class="row">
-		<div class="col-sm-6 col-sm-3-offset-6 col-md-6 col-lg-6 col-xl-4">
+		<div class="col-sm-7 col-sm-3-offset-6 col-md-8 col-lg-7 col-xl-4">
 		<p>However, it is possible to create a panel with jQuery. You don't have to use the HTML panels if you prefer the JavaScript ones. This panel looks the same as the others, but it isn't pure HTML.</p>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur rhoncus lectus eu faucibus. Fusce mattis dignissim volutpat. Aenean quam risus, laoreet malesuada ipsum quis, efficitur semper justo. Nullam et erat ex. Integer elit ex, tincidunt at semper rutrum, auctor eu lorem. Nulla sodales orci dolor, sed finibus libero sollicitudin eleifend. Praesent vestibulum egestas eleifend. Donec at erat nisl. In vel nisi ipsum. Praesent eleifend a est vel tristique. Suspendisse eget sapien non mauris malesuada ultricies. Morbi eget arcu diam. Vestibulum hendrerit placerat posuere. Sed rhoncus sed arcu vitae fringilla. Suspendisse at nibh sed lacus posuere pharetra.</p>
 		</div>
@@ -145,7 +142,7 @@
 $(document).ready(function(){
 	$('#openRight').click(function(){
 		$('#rightPanel').panel({
-			width:'20%',
+			width:'30%',
 			height:'100%',
 			direction:'right'
 		});
