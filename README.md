@@ -41,11 +41,12 @@ Also make sure to add the following CSS to your CSS file:
     .panel-hide {display: none;}
     
 Adding the Overlay
-    1) Add the following code either at the very top or very bottom of your HTML file
+
+1) Add the following code either at the very top or very bottom of your HTML file
 
         <div id="overlay"></div>
 
-    2) Add the following CSS to your CSS file 
+2) Add the following CSS to your CSS file 
 
         #overlay{
         left:0;
@@ -59,7 +60,7 @@ Adding the Overlay
         display:none;
         }
 
-    3) NOTE: Background and opacity can be changed, make sure the Z-Index of your panel is higher than your overlay (you should change this as well)
+3) NOTE: Background and opacity can be changed, make sure the Z-Index of your panel is higher than your overlay (you should change this as well)
 
 License
 =======
