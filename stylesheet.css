@@ -181,3 +181,7 @@ ul{
 	position:fixed;
 	display:none;
 }
+
+.content{
+	display:none;
+}
