@@ -26,12 +26,14 @@
             self.setOptions(element); 
             $(element).removeClass('panel-hide');
             $(element).addClass('panel-show');
+            $('#overlay').css('display','block');
             self.animateOn(false, '.panel-show');
 
         }
 
         self.hide = function(element){ 
             self.animateOn(true, '.panel-show');
+            $("#overlay").css('display','none');
              $(element).removeClass('panel-show');
         }
 
