@@ -57,7 +57,7 @@
             var target = $(this).attr('data-target'); 
            var options = {
               width : $(this).attr('data-width') || '100%',
-              height: $(this).attr('data-height') || '300px',
+              height: $(this).attr('data-height') || '50%',
               direction: $(this).attr('data-direction') || 'top',
               background: $(this).attr('data-bg') || '#FFFFFF',
               textColor: $(this).attr('data-color') || '#000000'
@@ -104,15 +104,14 @@
           //Checks through to see if the height is in px or %
           console.log($(window).height());
             for(var i =0; i < height.length; i++){
-            // if(height.charAt(i)==="%"){
-            //   height=height.substr(0,i);
-            //   height=Number(height);
-            //   var windowHeight= 1000;
-            //   height = windowHeight * (height/100);
-            //   settings.height = height;
-            // }
-            //else 
-              if(height.charAt(i)==="p"){
+            if(height.charAt(i)==="%"){
+              height=height.substr(0,i);
+              height=Number(height);
+              var windowHeight= $(window).innerHeight();
+              height = windowHeight * (height/100);
+              settings.height = height;
+            }
+            else if(height.charAt(i)==="p"){
                 height=height.substr(0,i);
                 height=Number(height);
                 settings.height = height;
