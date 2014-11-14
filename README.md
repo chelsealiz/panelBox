@@ -29,16 +29,37 @@ Then, create your panel div. Add the "panel-hide" class to the div. Now create t
     
 To change the default features, add any of the following within the HTML tag with the previous two.
 
-Height: data-height
-Direction of panel(which side it came from): data-direction
-Width: data-width
-Background color: data-bg
-Text color: data-color
+    Height: data-height
+    Direction of panel(which side it came from): data-direction
+    Width: data-width
+    Background color: data-bg
+    Text color: data-color
 
 Also make sure to add the following CSS to your CSS file:
 
     .panel-show {display: block;}
     .panel-hide {display: none;}
+    
+Adding the Overlay
+    1) Add the following code either at the very top or very bottom of your HTML file
+
+        <div id="overlay"></div>
+
+    2) Add the following CSS to your CSS file 
+
+        #overlay{
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        background:#000;
+        opacity:0.7;
+        z-index:99;
+        position:fixed;
+        display:none;
+        }
+
+    3) NOTE: Background and opacity can be changed, make sure the Z-Index of your panel is higher than your overlay (you should change this as well)
 
 License
 =======
