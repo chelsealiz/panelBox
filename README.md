@@ -35,6 +35,11 @@ Width: data-width
 Background color: data-bg
 Text color: data-color
 
+Also make sure to add the following CSS to your CSS file:
+
+    .panel-show {display: block;}
+    .panel-hide {display: none;}
+
 License
 =======
 
