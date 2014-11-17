@@ -18,22 +18,27 @@
               direction:'top',
               background: '#ffffff',
               textColor: '#000000',
+              marginVert: null,
+              marginHoriz: null,
               complete : null
             } 
 
         //Creates the functions that open and close the panel, also sets the options
-        self.show = function(element){ 
+        self.show = function(element){
             self.setOptions(element); 
             $(element).removeClass('panel-hide');
             $(element).addClass('panel-show');
             $('#overlay').css('display','block');
             self.animateOn(false, '.panel-show');
-            $(element).children().css('display','block');
+            // console.log($(element).children('first-child'));
+            // $(element).children(':first-child').removeClass('content-hidden');
+            // $(element).children(':first-child').addClass('content-visible');
 
         }
 
         self.hide = function(element){ 
-          $(element).children().css('display','none');
+           // $(element).children(':first-child').removeClass('content-visible');
+           //  $(element).children(':first-child').addClass('content-hidden');
             self.animateOn(true, '.panel-show');
             $("#overlay").css('display','none');
              $(element).removeClass('panel-show');
@@ -78,91 +83,113 @@
         //Sets the different options on the panel class
         self.setOptions = function(element){
           // Sets the direction
+
           var direction = settings.direction;
           $(element).css(direction, 0);
+
+          var vertMargin = settings.width
+          for(var i = 0; i < vertMargin.length; i++){
+              if(vertMargin.charAt(i)==="%"){
+                vertMargin = vertMargin.substr(0,i);
+                vertMargin = Number(vertMargin) /100;
+                var winSize = $(document).width();
+                vertMargin = vertMargin * winSize;
+                vertMargin = vertMargin * -1;
+              }
+              else if(vertMargin.charAt(i)==="p"){
+                vertMargin = vertMargin.substr(0, i);
+                vertMargin = vertMargin * -1;
+              }
+          }
+
+
+          settings.marginVert = vertMargin;
+
+          var horizMargin = settings.height * -1;
+
 
           //Uses the direction to set the rest of the CSS, minus what's needed for animation
           if(direction === "top" || direction === "bottom"){
               $(element).css({
               width : settings.width,
-              height : '0px',
-              background : settings.background,
-              color : settings.textColor
-            }); 
-          }
-          else if(direction ==="right" || direction === "left"){
-              $(element).css({
-              width : '0px',
               height : settings.height,
               background : settings.background,
               color : settings.textColor
             }); 
+              if(direction==="top"){
+                 $(element).css('margin-top', horizMargin+'px'); 
+              }
+               else{
+                 $(element).css('margin-bottom', horizMargin); 
+              }
+
+          }
+          else if(direction ==="right" || direction === "left"){
+              $(element).css({
+              width : settings.width,
+              height : settings.height,
+              background : settings.background,
+              color : settings.textColor
+            }); 
+                if(direction==="right"){
+                 $(element).css('margin-right', vertMargin); 
+              }
+               else{
+                 $(element).css('margin-left', vertMargin+'px'); 
+              }
           }           
         }
 
         //Animates the panel
         self.animateOn=function(toggleOff, element){
                 var direction = settings.direction;
-         if(direction === "top" || direction === "bottom"){
-            var height=settings.height;
-          //Checks through to see if the height is in px or %
-          console.log($(window).height());
-            for(var i =0; i < height.length; i++){
-            if(height.charAt(i)==="%"){
-              height=height.substr(0,i);
-              height=Number(height);
-              var windowHeight= $(window).innerHeight();
-              height = windowHeight * (height/100);
-              settings.height = height;
-            }
-            else if(height.charAt(i)==="p"){
-                height=height.substr(0,i);
-                height=Number(height);
-                settings.height = height;
-              }
-            }
-          
+                var vertHeight = settings.marginVert;
+                var horizHeight = settings.marginHoriz;
 
-          if(toggleOff) {
-            $(element).animate({
-              height: 0
-            });
-          }
-          else {
-              $(element).animate({
-              height: settings.height
-            });
-          } 
-         }
-
-          else if(direction ==="right" || direction === "left"){
-           var width=settings.width;
-          //Checks through to see if the height is in px or %
-            for(var i =0; i < width.length; i++){
-            if(width.charAt(i)==="%"){
-              width=width.substr(0,i);
-              width=Number(width);
-              var windowwidth= $(window).width();
-              width = windowwidth * (width/100);
-              settings.width = width;
-            }
-            else if(width.charAt(i)==="p"){
-              width=width.substr(0,i);
-              width=Number(width);
-               settings.width = width;
-            }
-          }
-          if(toggleOff){
-            $(element).animate({
-              width: 0
-            });
-          }
-          else
-              $(element).animate({
-              width: settings.width
-            });
-
-          }
+                if(toggleOff){
+                    if(direction === 'top'){
+                      $(element).animate({
+                        marginTop:horizHeight
+                      });
+                    }
+                    else if(direction === 'bottom'){
+                      $(element).animate({
+                        marginBottom:horizHeight
+                      });
+                    }
+                    else if(direction === 'right'){
+                      $(element).animate({
+                        marginRight:vertHeight
+                      });
+                    }
+                     else if(direction === 'left'){
+                      $(element).animate({
+                        marginLeft: vertHeight
+                      });
+                    }
+                }
+              else{
+                    if(direction === 'top'){
+                      $(element).animate({
+                        marginTop:0
+                      });
+                    }
+                    else if(direction === 'bottom'){
+                      $(element).animate({
+                        marginBottom:0
+                      });
+                    }
+                    else if(direction === 'right'){
+                      $(element).animate({
+                        marginRight:0
+                      });
+                    }
+                     else if(direction === 'left'){
+                      $(element).animate({
+                        marginLeft: 0
+                      });
+                    }
+                }
         }
 
 
