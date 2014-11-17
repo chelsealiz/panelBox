@@ -89,7 +89,7 @@ ul{
 }
 
 .panel-body{
-	padding:20px;
+	padding:20px 50px;
 }
 
 
@@ -108,44 +108,54 @@ ul{
 	margin:0px;
 }
 
+#bottomPanel .panel-body{
+	margin-right:50px;
+}
+
 /*Panel Dismiss Buttons General*/
-.btn-dismiss{
+.btn{
 	background: #67ACDD;
 	color: #FFF;
 	text-align: center;
 	font-family: 'Abel', sans-serif;
 	font-size: 19px;
 	border: solid #C3BABA 1px;
+	
 }
 
-.btn-dismiss:hover{
+.btn:hover{
 	cursor:pointer;
 	opacity: 0.7;
 	text-decoration: underline;
 }
 
 /*Panel Dismiss Buttons*/
-#topPanel .btn-dismiss{
-	right: 12px;
+#topPanel .btn{
+	right: 50px;
 	position:absolute;
 	width: 90px;
+	margin-bottom:10px;
+	margin-top:40px;
 }
 
 
-#bottomPanel .btn-dismiss{
-	top: 7px;
-	right: 10px;
+#bottomPanel .btn{
+	right: 50px;
 	position:absolute;
+	margin-bottom:10px;
+	margin-top:34px;
 }
 
-#rightPanel .btn-dismiss{
+#rightPanel .btn{
 	right:20px;
 	position:absolute;
+	margin-top:10px;
 }
 
-#leftPanel .btn-dismiss{
+#leftPanel .btn{
 	right:20px;
 	position:absolute;
+	margin-top:50px;
 }
 
 /*Opening Panel Buttons*/
