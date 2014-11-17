@@ -6,12 +6,12 @@ This library allows for the creation of dynamic, customizable information panels
 Downloading
 ============
 
-Clone this repository to use
+Download panelBox.js directly from this site.
 
 Demo
 =====
 
-A demo for this library is located at http://overstreetce.github.io/panelBox/
+A demo for this library is located [here] (http://overstreetce.github.io/panelBox/)
 
 Using this Library
 ===================
