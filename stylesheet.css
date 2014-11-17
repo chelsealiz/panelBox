@@ -23,9 +23,6 @@ ul{
 	width:95%;
 	margin:auto;
 	background:#FFF;
-	border-radius:5px;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
 	padding: 90px 76px;
 	padding-left: 260px;
 	padding-bottom:10px;
@@ -61,7 +58,7 @@ ul{
 
 
 /*Panel Designs*/
-.panel{
+.panel-wrap{
 	position: fixed;  
 	background-color:#F8F8F8;
 	overflow: auto;
@@ -88,7 +85,7 @@ ul{
 	opacity:0.4;
 }
 
-.panel-body{
+.panel-content{
 	padding:20px 50px;
 }
 
