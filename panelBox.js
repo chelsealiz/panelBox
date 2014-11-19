@@ -92,37 +92,40 @@
             });
  //Sets the vertical margin for the div so that it can move properly
           var widthMargin = settings.width
-          for(var i = 0; i < widthMargin.length; i++){
-              if(widthMargin.charAt(i)==="%"){
-                widthMargin = widthMargin.substr(0,i);
-                widthMargin = Number(widthMargin) /100;
-                var winSize = $(window).width();
-                widthMargin = widthMargin * winSize;
-                widthMargin = widthMargin * -1;
-              }
-              else if(widthMargin.charAt(i)==="p"){
-                widthMargin = widthMargin.substr(0, i);
-                widthMargin = widthMargin * -1;
-              }
+          var num = widthMargin.search('%');
+          var num2 = widthMargin.search('px');
+          if(num != -1){
+            widthMargin = widthMargin.replace('%', '');
+            widthMargin = Number(widthMargin) /100;
+            var winSize = $(window).width();
+            widthMargin = widthMargin * winSize;
           }
+          else if(num2!=-1){
+          widthMargin = widthMargin.replace('px', '');
+          widthMargin = Number(widthMargin);
+          }
+           widthMargin = widthMargin * -1;
           settings.marginWidth = widthMargin;
 
           //Sets the vertical margin for the div so that it can move properly
-          var heightMargin = settings.height;
-          for(var i = 0; i < heightMargin.length; i++){
-              if(heightMargin.charAt(i)==="%"){
-                heightMargin = heightMargin.substr(0,i);
-                heightMargin = Number(heightMargin) /100;
-                var winSize = $(window).height();
-                heightMargin = heightMargin * winSize;
-                heightMargin = heightMargin * -1;
-              }
-              else if(heightMargin.charAt(i)==="p"){
-                heightMargin = heightMargin.substr(0, i);
-                heightMargin = heightMargin * -1;
-              }
+        var heightMargin = settings.height
+          var num = heightMargin.search('%');
+          var num2 = heightMargin.search('px');
+          if(num != -1){
+            heightMargin = heightMargin.replace('%', '');
+            heightMargin = Number(heightMargin) /100;
+            var winSize = $(window).height();
+            heightMargin = heightMargin * winSize;
           }
-            settings.marginHeight = heightMargin;
+          else if(num2!=-1){
+          heightMargin = heightMargin.replace('px', '');
+          heightMargin = Number(heightMargin);
+          }
+           heightMargin = heightMargin * -1;
+          settings.marginHeight = heightMargin;
+
+
+
                    
         }
 
