@@ -64,6 +64,7 @@ ul{
 	z-index:100;
 	line-height: 2;
 	margin:0;
+	display:none;
 }
 
 .panel-top{

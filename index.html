@@ -140,7 +140,11 @@ $(document).ready(function(){
 		});
 	});
 	$('#rightClose').click(function(){
-		$('#rightPanel').panel();
+		$('#rightPanel').panel({
+			width:'30%',
+			height:'100%',
+			direction:'right'
+		});
 	});
 });
 $('body').panel('watch');
