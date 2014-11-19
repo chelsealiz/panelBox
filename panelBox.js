@@ -38,7 +38,7 @@
           self.setOptions(element);
             $("#overlay").css('display','none');
             self.animateOn(true, '.panel-show');
-            $(element).removeClass('panel-show');
+            
         }
 
 
@@ -90,14 +90,7 @@
               background : settings.background,
               color : settings.textColor
             });
-
-                   
-        }
-
-        self.setMargins=function(element){
-          var direction = settings.direction;
-
-            //Sets the vertical margin for the div so that it can move properly
+ //Sets the vertical margin for the div so that it can move properly
           var widthMargin = settings.width
           for(var i = 0; i < widthMargin.length; i++){
               if(widthMargin.charAt(i)==="%"){
@@ -130,6 +123,14 @@
               }
           }
             settings.marginHeight = heightMargin;
+                   
+        }
+
+        self.setMargins=function(element){
+          var direction = settings.direction;
+var heightMargin = settings.marginHeight;
+var widthMargin = settings.marginWidth;
+           
 
             //Sets margins
             if(direction==="top"){
@@ -156,22 +157,22 @@
                     if(direction === 'top'){
                       $(element).animate({
                         marginTop:marginTall
-                      }, 2000);
+                      }, function(){$(element).removeClass('panel-show');});
                     }
                     else if(direction === 'bottom'){
                       $(element).animate({
                         marginBottom:marginTall
-                      });
+                      }, function(){$(element).removeClass('panel-show');});
                     }
                     else if(direction === 'right'){
                       $(element).animate({
                         marginRight:marginWide
-                      });
+                      }, function(){$(element).removeClass('panel-show');});
                     }
                      else if(direction === 'left'){
                       $(element).animate({
                         marginLeft: marginWide
-                      });
+                      }, function(){$(element).removeClass('panel-show');});
                     }
                 }
               else{
