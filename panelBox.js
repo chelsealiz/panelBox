@@ -18,25 +18,27 @@
               direction:'top',
               background: '#ffffff',
               textColor: '#000000',
+              marginWidth: null,
+              marginHeight: null,
               complete : null
             } 
 
         //Creates the functions that open and close the panel, also sets the options
-        self.show = function(element){ 
+        self.show = function(element){
             self.setOptions(element); 
+            self.setMargins(element);
             $(element).removeClass('panel-hide');
             $(element).addClass('panel-show');
             $('#overlay').css('display','block');
             self.animateOn(false, '.panel-show');
-            $(element).children().css('display','block');
-
-        }
+           
+            }
 
         self.hide = function(element){ 
-          $(element).children().css('display','none');
-            self.animateOn(true, '.panel-show');
+          self.setOptions(element);
             $("#overlay").css('display','none');
-             $(element).removeClass('panel-show');
+            self.animateOn(true, '.panel-show');
+            
         }
 
 
@@ -54,7 +56,7 @@
             } 
         }
 
-
+        //Checks for HTML elements instead of JS
         self.watch = function(){
           $('div[data-panel="switch"]').on('click', function(){
 
@@ -81,88 +83,123 @@
           var direction = settings.direction;
           $(element).css(direction, 0);
 
-          //Uses the direction to set the rest of the CSS, minus what's needed for animation
-          if(direction === "top" || direction === "bottom"){
-              $(element).css({
+          //Sets all settings except margins
+           $(element).css({
               width : settings.width,
-              height : '0px',
-              background : settings.background,
-              color : settings.textColor
-            }); 
-          }
-          else if(direction ==="right" || direction === "left"){
-              $(element).css({
-              width : '0px',
               height : settings.height,
               background : settings.background,
               color : settings.textColor
-            }); 
-          }           
+            });
+ //Sets the vertical margin for the div so that it can move properly
+          var widthMargin = settings.width
+          var num = widthMargin.search('%');
+          var num2 = widthMargin.search('px');
+          if(num != -1){
+            widthMargin = widthMargin.replace('%', '');
+            widthMargin = Number(widthMargin) /100;
+            var winSize = $(window).width();
+            widthMargin = widthMargin * winSize;
+          }
+          else if(num2!=-1){
+          widthMargin = widthMargin.replace('px', '');
+          widthMargin = Number(widthMargin);
+          }
+           widthMargin = widthMargin * -1;
+          settings.marginWidth = widthMargin;
+
+          //Sets the vertical margin for the div so that it can move properly
+        var heightMargin = settings.height
+          var num = heightMargin.search('%');
+          var num2 = heightMargin.search('px');
+          if(num != -1){
+            heightMargin = heightMargin.replace('%', '');
+            heightMargin = Number(heightMargin) /100;
+            var winSize = $(window).height();
+            heightMargin = heightMargin * winSize;
+          }
+          else if(num2!=-1){
+          heightMargin = heightMargin.replace('px', '');
+          heightMargin = Number(heightMargin);
+          }
+           heightMargin = heightMargin * -1;
+          settings.marginHeight = heightMargin;
+
+
+
+                   
+        }
+
+        self.setMargins=function(element){
+          var direction = settings.direction;
+var heightMargin = settings.marginHeight;
+var widthMargin = settings.marginWidth;
+           
+
+            //Sets margins
+            if(direction==="top"){
+                 $(element).css('margin-top', heightMargin+'px'); 
+              }
+            else if(direction==="bottom"){
+                  $(element).css('margin-bottom', heightMargin+'px'); 
+            }
+            else if(direction==="right"){
+                 $(element).css('margin-right', widthMargin+'px'); 
+              }
+            else{
+                 $(element).css('margin-left', widthMargin+'px'); 
+              }
         }
 
         //Animates the panel
         self.animateOn=function(toggleOff, element){
                 var direction = settings.direction;
-         if(direction === "top" || direction === "bottom"){
-            var height=settings.height;
-          //Checks through to see if the height is in px or %
-          console.log($(window).height());
-            for(var i =0; i < height.length; i++){
-            if(height.charAt(i)==="%"){
-              height=height.substr(0,i);
-              height=Number(height);
-              var windowHeight= $(window).innerHeight();
-              height = windowHeight * (height/100);
-              settings.height = height;
-            }
-            else if(height.charAt(i)==="p"){
-                height=height.substr(0,i);
-                height=Number(height);
-                settings.height = height;
-              }
-            }
-          
+                var marginWide = settings.marginWidth;
+                var marginTall = settings.marginHeight;
 
-          if(toggleOff) {
-            $(element).animate({
-              height: 0
-            });
-          }
-          else {
-              $(element).animate({
-              height: settings.height
-            });
-          } 
-         }
-
-          else if(direction ==="right" || direction === "left"){
-           var width=settings.width;
-          //Checks through to see if the height is in px or %
-            for(var i =0; i < width.length; i++){
-            if(width.charAt(i)==="%"){
-              width=width.substr(0,i);
-              width=Number(width);
-              var windowwidth= $(window).width();
-              width = windowwidth * (width/100);
-              settings.width = width;
-            }
-            else if(width.charAt(i)==="p"){
-              width=width.substr(0,i);
-              width=Number(width);
-               settings.width = width;
-            }
-          }
-          if(toggleOff){
-            $(element).animate({
-              width: 0
-            });
-          }
-          else
-              $(element).animate({
-              width: settings.width
-            });
-
-          }
+                if(toggleOff){
+                    if(direction === 'top'){
+                      $(element).animate({
+                        marginTop:marginTall
+                      }, function(){$(element).removeClass('panel-show');});
+                    }
+                    else if(direction === 'bottom'){
+                      $(element).animate({
+                        marginBottom:marginTall
+                      }, function(){$(element).removeClass('panel-show');});
+                    }
+                    else if(direction === 'right'){
+                      $(element).animate({
+                        marginRight:marginWide
+                      }, function(){$(element).removeClass('panel-show');});
+                    }
+                     else if(direction === 'left'){
+                      $(element).animate({
+                        marginLeft: marginWide
+                      }, function(){$(element).removeClass('panel-show');});
+                    }
+                }
+              else{
+                    if(direction === 'top'){
+                      $(element).animate({
+                        marginTop:0
+                      });
+                    }
+                    else if(direction === 'bottom'){
+                      $(element).animate({
+                        marginBottom:0
+                      });
+                    }
+                    else if(direction === 'right'){
+                      $(element).animate({
+                        marginRight:0
+                      });
+                    }
+                     else if(direction === 'left'){
+                      $(element).animate({
+                        marginLeft: 0
+                      });
+                    }
+                }
         }
 
 
@@ -180,3 +217,5 @@
 
         return self;
 }(jQuery));
+
+

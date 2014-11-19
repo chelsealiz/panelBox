@@ -10,7 +10,6 @@
 <body>
 <!--Top Panel-->
 	<div class="panel-wrap panel-hide" id ="topPanel">
-		<div class="content">
 		<div class="panel-top">
 			<h1>Panel Options</h1>
 			</div>
@@ -27,10 +26,8 @@
 <button type="button" class="btn" data-panel="dismiss" data-target="#topPanel" >Dismiss</button>
 		</div>
 	</div>
-	</div>
 <!--Bottom Panel-->
 	<div class="panel-wrap panel-hide" id ="bottomPanel">
-		<div class="content">
 		<div class="panel-top">
 			<h1>A Programming Joke and Other Notes</h1>
 		</div>
@@ -40,11 +37,10 @@
 		<p>Funny, huh? You can completely customize the content in these panels. You can add images, forms, links to more information, or literally anything you want. The sky's the limit.</p>
 		<button type="button" class="btn" data-panel="dismiss" data-target="#bottomPanel">Dismiss</button>
 		</div>
-</div>
 	</div>
 	<!--Left Panel-->
 	<div class="panel-wrap panel-hide" id ="leftPanel">
-		<div class="content">
+		
 		<div class="panel-top">
 			<h1>Panel Header</h1>
 		</div>
@@ -60,13 +56,10 @@
 					<li>Text Color- white/#FFFFFF (default- black/#000000)</li>
 				</ul>			
 		<button type="button" class="btn" data-panel="dismiss" data-target="#leftPanel">Dismiss</button>
-
-		</div>
 		</div>
 	</div>
 		<!--Right Panel-->
 	<div class="panel-wrap panel-hide" id ="rightPanel">
-		<div class="content">
 		<div class="panel-top">
 			<h1>Panel Header</h1>
 		</div>
@@ -74,7 +67,6 @@
 				<p> This panel was made with jQuery and JavaScript! Cool, yeah?</p>
 				<p> Creating panels this way does the exact same thing as creating them the other way, but if you know jQuery this can sometimes be easier. However, if you don't know jQuery or JavaScript, this can get quite complicated.</p>
 		<button type="button" class="btn" id="rightClose">Dismiss</button>
-		</div>
 		</div>
 	</div>
 <div id="overlay"></div>
@@ -148,7 +140,11 @@ $(document).ready(function(){
 		});
 	});
 	$('#rightClose').click(function(){
-		$('#rightPanel').panel();
+		$('#rightPanel').panel({
+			width:'30%',
+			height:'100%',
+			direction:'right'
+		});
 	});
 });
 $('body').panel('watch');
