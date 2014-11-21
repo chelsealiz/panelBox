@@ -2,7 +2,7 @@
  * Creates a Panel on any side you want that is openable and closeable
  * v. 1.0.0
  * Built by Chelsea
- * Github: github.com/overstreetce/alert-panel
+ * Github: github.com/overstreetce/panelBox
  *
  */
 (function($){
@@ -29,7 +29,8 @@
             self.setMargins(element);
             $(element).removeClass('panel-hide');
             $(element).addClass('panel-show');
-            $('#overlay').css('display','block');
+            $(document.body).append('<div id="overlay">');
+             $('#overlay').css('display','block');
             self.animateOn(false, '.panel-show');
            
             }
@@ -38,7 +39,7 @@
           self.setOptions(element);
             $("#overlay").css('display','none');
             self.animateOn(true, '.panel-show');
-            
+
         }
 
 
@@ -46,6 +47,7 @@
         self.toggle = function(index, element){ 
             if($(element).hasClass('panel-show')){
                 self.hide(element);
+                $(element).removeClass('panel-show');
             }
             else{
                 self.show(element);
@@ -160,7 +162,9 @@ var widthMargin = settings.marginWidth;
                     if(direction === 'top'){
                       $(element).animate({
                         marginTop:marginTall
-                      }, function(){$(element).removeClass('panel-show');});
+                      }, function(){
+                        $(element).removeClass('panel-show');
+                    });
                     }
                     else if(direction === 'bottom'){
                       $(element).animate({

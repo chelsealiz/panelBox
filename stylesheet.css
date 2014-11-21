@@ -64,7 +64,6 @@ ul{
 	z-index:100;
 	line-height: 2;
 	margin:0;
-	display:none;
 }
 
 .panel-top{
@@ -90,13 +89,7 @@ ul{
 }
 
 
-.panel-show {
-	display: block; 
-}
 
-.panel-hide {
-	display: none; 
-}
 .panel-top h1{	
 	font-family: 'Abel', sans-serif;
 }
@@ -175,16 +168,4 @@ ul{
 	cursor:pointer;
 	opacity: 0.7;
 	text-decoration: underline;
-}
-
-#overlay{
-	left:0;
-	top:0;
-	height:100%;
-	width:100%;
-	background:#000;
-	opacity:0.7;
-	z-index:99;
-	position:fixed;
-	display:none;
 }
