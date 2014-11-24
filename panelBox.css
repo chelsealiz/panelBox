@@ -1,6 +1,6 @@
 .panel-show {
 	display: block; 
-/*	z-index:99;*/
+	position:absolute;
 }
 
 .panel-hide {
@@ -8,18 +8,23 @@
 }
 
 #overlay{
-	left:0;
 	top:0;
 	right:0;
 	height:100%;
 	width:100%;
 	background:#000;
 	opacity:0.7;
-	z-index:10;
 	position:fixed;
 	display:none;
 }
 
-.panel{
-	z-index:99;
+.panel-content{
+	position:relative;
+	background:inherit;
+	height:100%;
+	width:100%;
+	margin:0;
+	top:-16px;
+	left:-9px;
+
 }

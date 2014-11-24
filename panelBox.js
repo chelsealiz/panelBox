@@ -29,7 +29,9 @@
             self.setMargins(element);
             $(element).removeClass('panel-hide');
             $(element).addClass('panel-show');
-            $(document.body).append('<div id="overlay">');
+            // $('panel-show').append('<div id = "panel-content">');
+            //  $('panel-content').append($(element).html());
+            $('.panel-show').prepend('<div id="overlay">');
              $('#overlay').css('display','block');
             self.animateOn(false, '.panel-show');
            
