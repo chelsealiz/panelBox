@@ -1,6 +1,5 @@
 .panel-show {
 	display: block; 
-	position:absolute;
 }
 
 .panel-hide {
@@ -24,7 +23,14 @@
 	height:100%;
 	width:100%;
 	margin:0;
-	top:-16px;
-	left:-9px;
+	
 
+}
+
+.pb-panel{
+	position: fixed;  
+	overflow: auto;
+	z-index:100;
+	line-height: 2;
+	margin:0;
 }

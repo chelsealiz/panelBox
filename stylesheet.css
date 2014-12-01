@@ -57,7 +57,7 @@ ul{
 
 
 /*Panel Designs*/
-.panel-wrap{
+.pb-panel{
 	position: fixed;  
 	background-color:#F8F8F8;
 	overflow: auto;

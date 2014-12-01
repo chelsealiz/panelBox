@@ -29,8 +29,6 @@
             self.setMargins(element);
             $(element).removeClass('panel-hide');
             $(element).addClass('panel-show');
-            // $('panel-show').append('<div id = "panel-content">');
-            //  $('panel-content').append($(element).html());
             $('.panel-show').prepend('<div id="overlay">');
              $('#overlay').css('display','block');
             self.animateOn(false, '.panel-show');
@@ -63,20 +61,21 @@
         //Checks for HTML elements instead of JS
         self.watch = function(){
           $('div[data-panel="switch"]').on('click', function(){
-
             var target = $(this).attr('data-target'); 
-           var options = {
-              width : $(this).attr('data-width') || '100%',
-              height: $(this).attr('data-height') || '50%',
-              direction: $(this).attr('data-direction') || 'top',
-              background: $(this).attr('data-bg') || '#FFFFFF',
-              textColor: $(this).attr('data-color') || '#000000'
-           } 
-            settings = $.extend(defaults, options);
-            $(target).each(self['toggle']);
+            var options = {
+                width : $(this).attr('data-width') || '100%',
+                height: $(this).attr('data-height') || '50%',
+                direction: $(this).attr('data-direction') || 'top',
+                background: $(this).attr('data-bg') || '#FFFFFF',
+                textColor: $(this).attr('data-color') || '#000000'
+             } 
+              settings = $.extend(defaults, options);
+              $(target).each(self['toggle']);
           })
           $('button[data-panel="dismiss"]').on('click', function(){
-            var target = $(this).attr('data-target'); 
+            var target = $(this).attr('data-target');
+            console.log(target); 
+                   //'#' + $(this).parents('.panel').attr('id'); 
              $(target).each(self['toggle']);
           })
         }
@@ -156,6 +155,7 @@ var widthMargin = settings.marginWidth;
 
         //Animates the panel
         self.animateOn=function(toggleOff, element){
+          console.log("element", element); 
                 var direction = settings.direction;
                 var marginWide = settings.marginWidth;
                 var marginTall = settings.marginHeight;
