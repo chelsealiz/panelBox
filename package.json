@@ -1,0 +1,30 @@
+{
+  "name": "panelBox",
+  "version": "1.0.0",
+  "description": "Creates dynamic openable and closeable panels",
+  "main": "panelBox.js",
+  "dependencies": {
+    "bower": "^1.3.12",
+    "gulp": "^3.8.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/overstreetce/panelBox.git"
+  },
+  "keywords": [
+    "panel",
+    "modal",
+    "information",
+    "panel"
+  ],
+  "author": "overstreetce",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/overstreetce/panelBox/issues"
+  },
+  "homepage": "https://github.com/overstreetce/panelBox"
+}

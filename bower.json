@@ -1,0 +1,27 @@
+{
+  "name": "panelBox",
+  "main": "panelBox.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/overstreetce/panelBox",
+  "authors": [
+    "overstreetce <ceo4jq@virginia.edu>"
+  ],
+  "description": "Creates dynamic, customizable information panels",
+  "keywords": [
+    "panels",
+    "modals",
+    "information",
+    "panels"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}
