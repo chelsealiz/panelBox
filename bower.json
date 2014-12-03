@@ -1,7 +1,7 @@
 {
   "name": "panelBox",
-  "main": "panelBox.js",
-  "version": "1.0.0",
+  "main": "dist/panelBox.min.js",
+  "version": "1.0.1",
   "homepage": "https://github.com/overstreetce/panelBox",
   "authors": [
     "overstreetce <ceo4jq@virginia.edu>"
@@ -18,9 +18,18 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "README.MD",
+    "img",
+    ".html",
+    "bootstrap",
+    "LICENSE.MD",
+    "stylesheet.css",
+    ".jpg",
+    ".json",
+    "**/.*"
   ],
   "dependencies": {
-    "bootstrap": "~3.2.0"
+    "jQuery": "~2.1.1"
   }
 }
