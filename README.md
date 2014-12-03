@@ -6,7 +6,9 @@ This library allows for the creation of dynamic, customizable information panels
 Downloading
 ============
 
-Download panelBox.js and panelBox.css directly from this site.
+For basic use, download the "dist" file directly from this site for the minified versions.
+
+For developmental use, download panelBox.js and panelBox.css directly from this site.
 
 Demo
 =====
